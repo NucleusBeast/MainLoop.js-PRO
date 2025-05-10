@@ -1,0 +1,10 @@
+#!/bin/sh
+# Check that the commit message starts with [branch-name]
+MSG_FILE=$1
+COMMIT_MSG=$(cat "$MSG_FILE")
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+if ! echo "$COMMIT_MSG" | grep -qE "^\[$BRANCH_NAME\]"; then
+  echo "❌ Commit message must start with [$BRANCH_NAME]."
+  exit 1
+fi
