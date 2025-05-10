@@ -7,3 +7,5 @@ MSG_FILE=$1
 if [ -n "$TICKET_ID" ]; then
   sed -i.bak -e "1s/^/[$TICKET_ID] /" "$MSG_FILE"
 fi
+
+echo "Sucesfully prepared the message."
