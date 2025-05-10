@@ -1,0 +1,9 @@
+#!/bin/sh
+# Samodejno doda [TICKET-ID] na začetek commit sporočila glede na ime veje
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+TICKET_ID=$(echo "$BRANCH_NAME" | grep -oE '[A-Z]+-[0-9]+')
+MSG_FILE=$1
+
+if [ -n "$TICKET_ID" ]; then
+  sed -i.bak -e "1s/^/[$TICKET_ID] /" "$MSG_FILE"
+fi
