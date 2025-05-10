@@ -1,13 +1,13 @@
 #!/bin/sh
 
-# Run ESLint on staged files
-# npx eslint $(git diff --cached --name-only --diff-filter=ACM | grep '\.js$')
-npx eslint ./src/mainloop.js
-
 echo "Running ESLint on staged files..."
 
+# Run ESLint on staged files
+npx eslint ./src/mainloop.js
+ESLINT_EXIT_CODE=$?
+
 # Check if ESLint passed
-if [ $? -ne 0 ]; then
+if [ $ESLINT_EXIT_CODE -ne 0 ]; then
   echo "ESLint failed. Fix the issues before committing."
   exit 1
 fi

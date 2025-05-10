@@ -744,13 +744,13 @@ function animate(timestamp) {
     panic = false;
 }
 
-// AMD support
-if (typeof define === 'function' && define.amd) {
-    define(root.MainLoop);
-}
-// CommonJS support
-else if (typeof module === 'object' && module !== null && typeof module.exports === 'object') {
-    module.exports = root.MainLoop;
-}
+// // AMD support
+// if (typeof define === 'function' && define.amd) {
+//     define(root.MainLoop);
+// }
+// // CommonJS support
+// else if (typeof module === 'object' && module !== null && typeof module.exports === 'object') {
+//     module.exports = root.MainLoop;
+// }
 
 })(this);
