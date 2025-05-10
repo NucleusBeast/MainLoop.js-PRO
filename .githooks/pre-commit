@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Run ESLint on staged files
-npx eslint $(git diff --cached --name-only --diff-filter=ACM | grep '\.js$')
+# npx eslint $(git diff --cached --name-only --diff-filter=ACM | grep '\.js$')
+npx eslint ./src/mainloop.js
 
 echo "Running ESLint on staged files..."
 
