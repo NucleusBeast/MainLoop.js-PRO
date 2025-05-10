@@ -3,6 +3,8 @@
 # Run ESLint on staged files
 npx eslint $(git diff --cached --name-only --diff-filter=ACM | grep '\.js$')
 
+echo "Running ESLint on staged files..."
+
 # Check if ESLint passed
 if [ $? -ne 0 ]; then
   echo "ESLint failed. Fix the issues before committing."
