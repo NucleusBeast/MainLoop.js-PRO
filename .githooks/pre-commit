@@ -11,6 +11,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-exho "All files have passed."
+echo "All files have passed."
 
 exit 0
